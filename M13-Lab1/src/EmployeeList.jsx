@@ -2,28 +2,32 @@ import React from 'react';
 import EmployeeFilter from './EmployeeFilter.jsx';
 import EmployeeAdd from './EmployeeAdd.jsx';
 
-function EmployeeRow(props) {
-    return (
-        <tr>
-            <td>{props.employee.name}</td>
-        </tr>
-    );
+class EmployeeRow extends React.Component {
+    render() {
+        return (
+            <tr>
+                <td>{this.props.employee.name}</td>
+            </tr>
+        );
+    }
 }
 
-function EmployeeTable(props) {
-    const rows = props.employees.map(emp => (
-        <EmployeeRow key={emp.id} employee={emp} />
-    ));
-    return (
-        <table>
-            <thead>
-                <tr><th>Name</th></tr>
-            </thead>
-            <tbody>
-                {rows}
-            </tbody>
-        </table>
-    );
+class EmployeeTable extends React.Component {
+    render() {
+        const rows = this.props.employees.map(emp => (
+            <EmployeeRow key={emp.id} employee={emp} />
+        ));
+        return (
+            <table>
+                <thead>
+                    <tr><th>Name</th></tr>
+                </thead>
+                <tbody>
+                    {rows}
+                </tbody>
+            </table>
+        );
+    }
 }
 
 export default class EmployeeList extends React.Component {

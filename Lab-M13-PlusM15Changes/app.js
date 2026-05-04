@@ -8,10 +8,10 @@ app.use(express.static(path.join(process.cwd(), 'public')));
 
 // Route '/' to index.html
 app.get('/', (req, res) => {
-  res.sendFile(path.join(process.cwd(), 'public', 'index.html'));
+    res.sendFile(path.join(process.cwd(), 'public', 'index.html'));
 });
 
 // Start server
 app.listen(4000, () => {
-  console.log('Server running at http://localhost:4000');
+    console.log('Server running at http://localhost:4000');
 });
